@@ -30,9 +30,6 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <header className="jumbotron">
-          <h1>Employee Directory</h1>
-        </header>
         <Table employeeInfo={this.state.employeeInfo}></Table>
       </div>
     );
