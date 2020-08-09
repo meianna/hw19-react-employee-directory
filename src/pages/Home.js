@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Table from "../components/Table.js";
 class Home extends React.Component {
   state = {
     employeeInfo: [],
@@ -13,10 +14,10 @@ class Home extends React.Component {
         let employeeInfo = [];
         for (let i = 0; i < employee.length; i++) {
           let record = {
-            name: employee[i].name.first + employee[i].name.last,
+            name: employee[i].name.first + " " + employee[i].name.last,
             email: employee[i].email,
-            dob: employee[i].dob,
-            phone: employee[i].cell,
+            age: employee[i].dob.age,
+            phone: employee[i].phone,
           };
           employeeInfo.push(record);
         }
@@ -32,6 +33,7 @@ class Home extends React.Component {
         <header className="jumbotron">
           <h1>Employee Directory</h1>
         </header>
+        <Table employeeInfo={this.state.employeeInfo}></Table>
       </div>
     );
   }
